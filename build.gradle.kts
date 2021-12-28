@@ -19,6 +19,7 @@ repositories {
 dependencies {
     val exposedVersion = "0.34.1"
     val pahoVersion = "1.2.0"
+    val colMessageVersion = "0.0.0.13"
 
     testImplementation(kotlin("test"))
 
@@ -33,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:$pahoVersion")
 
-    implementation("com.github.miong:CardsOfLegendsMessages:main-SNAPSHOT")
+    implementation("com.github.miong:CardsOfLegendsMessages:$colMessageVersion")
 }
 
 tasks.jar {

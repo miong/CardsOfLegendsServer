@@ -16,4 +16,8 @@ class NetManager(val clientId : String) {
     fun disconnect() {
         mqttClient.disconnect()
     }
+
+    fun getMqttClient(): MqttClient {
+        return mqttClient
+    }
 }
