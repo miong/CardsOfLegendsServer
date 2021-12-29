@@ -43,6 +43,16 @@ tasks.jar {
     }
 }
 
+tasks {
+    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+        archiveBaseName.set("CardsOfLegendsServer-Shadow")
+        mergeServiceFiles()
+        manifest {
+            attributes(mapOf("Main-Class" to "com.bubul.col.server.MainKt"))
+        }
+    }
+}
+
 tasks.test {
     useJUnit()
 }

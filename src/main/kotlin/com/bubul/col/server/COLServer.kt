@@ -25,10 +25,14 @@ class COLServer {
 
     fun stop() {
         logger.info("Stopping server")
-        friendsManager.disconnect()
-        loginManager.disconnect()
-        netManager.disconnect()
-        dbManager.disconnect()
+        try {
+            friendsManager.disconnect()
+            loginManager.disconnect()
+            netManager.disconnect()
+            dbManager.disconnect()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         logger.info("Server stopped")
     }
 }

@@ -1,18 +1,13 @@
 package com.bubul.col.server
 
-import kotlin.system.exitProcess
-
 import sun.misc.Signal
-import sun.misc.SignalHandler
+import kotlin.system.exitProcess
 
 fun main() {
     val colServer = COLServer()
-    Signal.handle(Signal("INT"), object : SignalHandler {
-        override fun handle(p0: Signal?) {
-            colServer.stop()
-            exitProcess(0)
-        }
-
-    })
+    Signal.handle(Signal("INT")) {
+        colServer.stop()
+        exitProcess(0)
+    }
     colServer.start()
 }
